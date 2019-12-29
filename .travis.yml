@@ -1,11 +1,12 @@
 language: generic 
 
 sudo: required
+
 services:
   - docker
 
 before_install:
-  - docker build -t navneetnagria/react-test -f ./client/Dockerfile.dev .
+  - docker build -t navneetnagria/react-test -f ./client/Dockerfile.dev ./client
 
 script: 
   - docker run -e CI=true navneetnagria/react-test npm test -- --coverage
