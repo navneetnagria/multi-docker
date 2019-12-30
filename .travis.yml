@@ -18,9 +18,11 @@ after success:
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-  - docker push navneetnagria/multi-client
   - docker push navneetnagria/multi-nginx
   - docker push navneetnagria/multi-server
   - docker push navneetnagria/multi-worker
+
+  - echo "NAVNEET NAGRIA"
+  - docker push navneetnagria/multi-client
 
   - echo "NAVNEET NAGRIA"
