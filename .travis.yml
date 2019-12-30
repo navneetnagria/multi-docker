@@ -23,4 +23,4 @@ after success:
   - docker push navneetnagria/multi-server
   - docker push navneetnagria/multi-worker
 
-  - echo "NAVNEET"
+  - echo "NAVNEET NAGRIA"
