@@ -11,14 +11,13 @@ before_install:
 script: 
   - docker run -e CI=true navneetnagria/react-test npm test -- --coverage
 
-
 after success:
   - docker build -t navneetnagria/multi-client ./client
   - docker build -t navneetnagria/multi-nginx ./nginx
   - docker build -t navneetnagria/multi-server ./server
   - docker build -t navneetnagria/multi-worker ./worker
 
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "github001" | docker login -u "navneetnagria001" --password-stdin
 
   - docker push navneetnagria/multi-client
   - docker push navneetnagria/multi-nginx
