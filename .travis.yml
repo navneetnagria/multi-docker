@@ -20,4 +20,4 @@ after success:
   - echo "NAVNEET NAGRIA"
   - docker push navneetnagria/multi-client
 
-  - echo "NAVNEET NAGRIA"
+  - echo "NAVNEET NAGRI"
