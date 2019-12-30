@@ -11,8 +11,13 @@ script:
   - docker run -e CI=true navneetnagria/react-test npm test -- --coverage
 
 after success:
+  
   - docker build -t navneetnagria/multi-client ./client
 
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+
+  - echo "NAVNEET NAGRIA"
   - docker push navneetnagria/multi-client
 
-
+  - echo "NAVNEET NAGRIA"
