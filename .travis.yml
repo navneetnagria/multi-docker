@@ -11,19 +11,8 @@ script:
   - docker run -e CI=true navneetnagria/react-test npm test -- --coverage
 
 after success:
-  
-  - docker build -t navneetnagria/multi-nginx ./nginx
-  - docker build -t navneetnagria/multi-server ./server
-  - docker build -t navneetnagria/multi-worker ./worker
   - docker build -t navneetnagria/multi-client ./client
 
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-
-  - docker push navneetnagria/multi-nginx
-  - docker push navneetnagria/multi-server
-  - docker push navneetnagria/multi-worker
-
-  - echo "NAVNEET NAGRIA"
   - docker push navneetnagria/multi-client
 
-  - echo "NAVNEET NAGRIA"
+
