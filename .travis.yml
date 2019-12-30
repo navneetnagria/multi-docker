@@ -1,4 +1,3 @@
-language: generic 
 
 sudo: required
 
@@ -17,7 +16,7 @@ after success:
   - docker build -t navneetnagria/multi-server ./server
   - docker build -t navneetnagria/multi-worker ./worker
 
-  - echo "github001" | docker login -u "navneetnagria001" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   - docker push navneetnagria/multi-client
   - docker push navneetnagria/multi-nginx
